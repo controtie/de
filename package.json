@@ -1,0 +1,17 @@
+{
+  "name": "thotwell",
+  "version": "1.0.0",
+  "description": "Distributed expertise",
+  "main": "server.js",
+  "scripts": {
+    "test": "go",
+    "start": "node server.js"
+  },
+  "author": "controtie",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.14"
+  }
+}
