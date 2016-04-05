@@ -1,0 +1,21 @@
+<div ng-controller='NewThreadController'>
+	<form name="submitThread">
+		Username:
+		<input ng-model="username"></input>
+		Subject:
+		<input ng-model="subject"></input>
+		Text:
+		<input ng-model="text"></input>
+		Bounty:
+		<input ng-model="bounty"></input>
+		<button ng-click='addThread()'> Submit </button>
+	</form>
+</div>
+
+<!--   <form name="signinForm" ng-submit='signin()'>
+    <input type='text'ng-model='user.username' ng-change='validate(user.username, "username")'>
+    <p> {{validUser}} </p>
+    <input type="password" ng-model='user.password' ng-change='validate(user.password, "password")'>
+    <p> {{validPassword}} </p>
+    <button>signin</button>
+  </form> -->
