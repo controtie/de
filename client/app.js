@@ -1,6 +1,7 @@
 angular.module('thotwell', [
   'thotwell.openThreads',
   'thotwell.closedThreads',
+  'thotwell.newThreads',
   'thotwell.services',
   'ngRoute'
 ])
@@ -13,6 +14,10 @@ angular.module('thotwell', [
   .when('/closed', {
     templateUrl: './threads/closedThreads.html',
     controller: 'ClosedThreadController'
+  })
+  .when('/new', {
+    templateUrl: './threads/newThread.html',
+    controller: 'NewThreadController'
   })
 
     // .otherwise({redirectTo: '/'});

@@ -1,10 +1,12 @@
 <div ng-controller='OpenThreadController'>
+	<button ng-click='go()'> Post a New Thread </button>
 	<div class='container'>
 		<div class='thread' ng-repeat='entry in threads'>
 			<div class='username'> Username: {{entry.username}} </div>
 			<div> Subject: {{entry.subject}} </div>
 			<div> Text: {{entry.body}} </div>
 			<div> Bounty: {{entry.bounty}} </div>
+			<button> Close Thread </button>
 		</div>
 	</div>
 </div>

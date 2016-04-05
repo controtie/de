@@ -12,7 +12,7 @@ angular.module('thotwell.services', [])
   var getClosed = function() {
     return $http({
       method: 'GET',
-      url: '/threads', 
+      url: '/closedThreads', 
     }).then(function(resp) {
       return resp.data;
     });
