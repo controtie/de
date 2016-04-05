@@ -17,6 +17,14 @@ angular.module('thotwell', [
     templateUrl: './threads/newThread.html',
     controller: 'NewThreadController'
   })
+  .when('/signin', {
+    templateUrl: './users/signin.html',
+    controller: 'NewThreadController'
+  })
+  .when('/signup', {
+    templateUrl: './users/signup.html',
+    controller: 'NewThreadController'
+  })
 
   // .otherwise({redirectTo: '/'});
 });

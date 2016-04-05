@@ -9,6 +9,11 @@
 		Bounty:
 		<input ng-model="bounty"></input>
 		<button ng-click='addThread()'> Submit </button>
+		<button ng-click='genAddress()'> Generate keys </button>
+		<p> Public Key: </p>
+		<p> <b>{{pub_key}}</b></p>
+		<p> Private Key <b>(don't share this!)</b>: </p>
+		<p> <b>{{priv_key}}</b> </p>
 	</form>
 </div>
 

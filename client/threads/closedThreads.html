@@ -1,6 +1,6 @@
 <div ng-controller='ClosedThreadController'>
 	<div class='container'>
-		<div class='thread' ng-repeat='entry in threads'>
+		<div class='thread' ng-repeat='entry in threads.slice().reverse()'>
 			<div class='username'> Username: {{entry.username}} </div>
 			<div> Subject: {{entry.subject}} </div>
 			<div> Text: {{entry.body}} </div>

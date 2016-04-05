@@ -1,14 +1,19 @@
 <div ng-controller='OpenThreadController'>
 	<button ng-click='go()'> Post a New Thread </button>
 	<div class='container'>
-		<div class='thread' ng-repeat='entry in threads'>
+		<div class='thread' ng-repeat='entry in threads.slice().reverse()'>
 			<div class='username'> Username: {{entry.username}} </div>
-			<div> Subject: {{entry.subject}} </div>
-			<div> Text: {{entry.body}} </div>
-			<div> Bounty: {{entry.bounty}} </div>
-			<p> {{entry._id}} </p>
+				<div> Subject: {{entry.subject}} </div>
+				<div> Text: {{entry.body}} </div>
+				<div> Bounty: {{entry.bounty}} </div>
+				<div class='comment' ng-repeat='comment in entry.comments'>
+					<!-- <div > Username: {{comment.username}} </div> -->
+					<div> Comment: {{comment.text}} </div>
+			  </div>
 			<button ng-click='closeThread(entry)'> Close Thread </button>
 			<button ng-click='reveal(entry.priv_key)'> Claim Bounty </button>
+			<input ng-model='newComm'> </input>
+			<button ng-click='addComment(entry, newComm)'> Comment </button> 
 		</div>
 	</div>
 </div>

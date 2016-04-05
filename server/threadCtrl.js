@@ -9,6 +9,7 @@ var findOneThread = Q.nbind(Thread.findOne, Thread);
 var findOThreads = Q.nbind(Thread.find, Thread);
 var createOThread = Q.nbind(Thread.create, Thread);
 var removeOThread = Q.nbind(Thread.findOneAndRemove, Thread);
+var commentOThread = Q.nbind(Thread.findOneAndUpdate, Thread);
 
 // Promisify 'Closed' Mongoose methods
 var findOneCThread = Q.nbind(CThread.findOne, CThread);
@@ -53,14 +54,14 @@ exports.addThread = function (req, res, next) {
     subject: req.body.subject,
     body: req.body.body,
     bounty: req.body.bounty,
+    pub_key: req.body.pub_key,
+    priv_key: req.body.priv_key,
     comments: []
   }).then(function () {
     console.log(req.body);
     res.send('addThread received')
   });
 }
-    //pub_key: req.body.pub_key,
-    //priv_key: req.body.priv_key,
 
 //move thread from threads to cthreads
 exports.moveThread = function (req, res, next) {
@@ -78,6 +79,22 @@ exports.moveThread = function (req, res, next) {
   removeOThread({_id: req.body._id})
     .then(function() {
     res.send('move thread received');  
+  });
+}
+
+exports.addComment = function (req, res, next) {
+  console.log(req.body.comment);
+  console.log(req.body.id);
+  commentOThread({_id: req.body.id}, 
+    {$push: 
+      {
+        comments: {
+          text: req.body.comment
+        }
+      }
+    }).then(function() {
+    console.log('great success!');
+    res.send('great success!');
   });
 }
 

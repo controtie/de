@@ -37,10 +37,34 @@ angular.module('thotwell.services', [])
     });
   };
 
+  var getAddress = function() {
+    return $http({
+      method: 'GET',
+      url: '/genAddress'
+    }).then(function(resp) {
+      return resp;
+    });    
+  };
+
+  var addComment = function (id, comment) {
+    return $http({
+      method: 'POST',
+      url: '/addComment',
+      data: {
+        comment: comment,
+        id: id
+      }
+    }).then(function(resp) {
+      return resp;
+    });
+  }
+
   return {
     getOpen: getOpen,
     getClosed: getClosed,
+    addOne: addOne,
     moveOne: moveOne,
-    addOne: addOne
+    addComment: addComment,
+    getAddress: getAddress
   };
 });
