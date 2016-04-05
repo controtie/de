@@ -4,24 +4,18 @@
 
 <!-- Load our angular modules -->
 <script src="./threads/threadsController.js"></script>
+<script src="./services.js"></script>
 <script src="./app.js"></script>
 
 <div ng-app='thotwell'>
 	<nav> 
 		<ul>
-			<li> OPEN </li>
-			<li> CLOSED </li>
+			<li> <a href='#/open'> OPEN </a> </li>
+			<li> <a href='#/closed'> CLOSED </a> </li>
 		</ul>
 	</nav>
-	<div class='container'>
-		<div class='thread'>
-			<p> subject </p>
-			<p> username </p>
-			<p> text </p>
-			<p> bounty: 0.005 </p>
-		</div>
-	</div>
 	<div ng-view>
 	  <p ng-model='username'> {{username}} </p>
 	</div>
 </div>
+<style src='./style.css'> </style>

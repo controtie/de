@@ -1,7 +1,15 @@
-angular.module('threads.services', [])
-
+angular.module('thotwell.services', [])
 .factory('Threads', function ($http) {
-  var getAll = function() {
+  var getOpen = function() {
+    return $http({
+      method: 'GET',
+      url: '/openThreads', 
+    }).then(function(resp) {
+      return resp.data;
+    });
+  };
+
+  var getClosed = function() {
     return $http({
       method: 'GET',
       url: '/threads', 
@@ -21,7 +29,8 @@ angular.module('threads.services', [])
   };
 
   return {
-    getAll: getAll,
+    getOpen: getOpen,
+    getClosed: getClosed,
     addOne: addOne
   };
 });

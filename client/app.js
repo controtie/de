@@ -1,12 +1,19 @@
 angular.module('thotwell', [
-  'thotwell.threads',
+  'thotwell.openThreads',
+  'thotwell.closedThreads',
+  'thotwell.services',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/threads', {
-      templateUrl: './threads/threads.html',
-      controller: 'ThreadController'
+    .when('/open', {
+      templateUrl: './threads/openThreads.html',
+      controller: 'OpenThreadController'
     })
-    .otherwise({redirectTo: '/'});
+  .when('/closed', {
+    templateUrl: './threads/closedThreads.html',
+    controller: 'ClosedThreadController'
+  })
+
+    // .otherwise({redirectTo: '/'});
 });
