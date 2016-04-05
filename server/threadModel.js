@@ -6,11 +6,13 @@ var threadSchema = new mongoose.Schema({
   priv_key: String,
   subject: String,
   body: String,
+  bounty: Number,
   comments: [{ 
     username: String,
     text: String
   }]
 });
 
+exports.Thread = mongoose.model('Thread', threadSchema);
 
-module.exports = mongoose.model('Thread', threadSchema);
+exports.CThread = mongoose.model('CThread', threadSchema);

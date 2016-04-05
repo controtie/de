@@ -22,7 +22,11 @@ app.get('/', function (req, res) {
 
 app.get('/users', userCtrl.getUsers);
 
-app.get('/threads', threadCtrl.getThreads)
+app.get('/openThreads', threadCtrl.getOpenThreads);
+app.get('/closedThreads', threadCtrl.getClosedThreads);
+//change these to POST later
+app.post('/addThread', threadCtrl.addThread);
+app.post('/moveThread', threadCtrl.moveThread);
 
 app.use(express.static(path.join(__dirname, 'client')));
 

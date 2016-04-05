@@ -6,7 +6,9 @@
 			<div> Subject: {{entry.subject}} </div>
 			<div> Text: {{entry.body}} </div>
 			<div> Bounty: {{entry.bounty}} </div>
-			<button> Close Thread </button>
+			<p> {{entry._id}} </p>
+			<button ng-click='closeThread(entry)'> Close Thread </button>
+			<button ng-click='reveal(entry.priv_key)'> Claim Bounty </button>
 		</div>
 	</div>
 </div>

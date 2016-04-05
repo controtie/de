@@ -1,7 +1,5 @@
 angular.module('thotwell', [
-  'thotwell.openThreads',
-  'thotwell.closedThreads',
-  'thotwell.newThreads',
+  'thotwell.threads',
   'thotwell.services',
   'ngRoute'
 ])
@@ -20,5 +18,5 @@ angular.module('thotwell', [
     controller: 'NewThreadController'
   })
 
-    // .otherwise({redirectTo: '/'});
+  // .otherwise({redirectTo: '/'});
 });

@@ -17,12 +17,21 @@ angular.module('thotwell.services', [])
       return resp.data;
     });
   };
-
-  var addOne = function(link) {
+  var addOne = function(entry) {
     return $http({
       method: 'POST',
-      url: '/api/links', 
-      data: link
+      url: '/addThread', 
+      data: entry
+    }).then(function(resp) {
+      return resp;
+    });
+  };
+
+  var moveOne = function(entry) {
+    return $http({
+      method: 'POST',
+      url: '/moveThread', 
+      data: entry
     }).then(function(resp) {
       return resp;
     });
@@ -31,6 +40,7 @@ angular.module('thotwell.services', [])
   return {
     getOpen: getOpen,
     getClosed: getClosed,
+    moveOne: moveOne,
     addOne: addOne
   };
 });
